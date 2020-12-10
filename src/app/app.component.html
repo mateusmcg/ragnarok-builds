@@ -421,9 +421,15 @@
       <pre *ngSwitchCase="'test'">ng test</pre>
       <pre *ngSwitchCase="'build'">ng build --prod</pre>
 
-      TESTE STG
-      TESTE STG
-      TESTE STG
+      <div *ngIf="auth.user | async as user; else showLogin">
+        <h1>Hello {{ user.displayName }}!</h1>
+        {{user | json}}
+        <button (click)="logout()">Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <p>Please login.</p>
+        <button (click)="login()">Login with Google</button>
+      </ng-template>
 
 
       <ul>
