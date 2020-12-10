@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ragnarok-builds": {
+      "hosting": {
+        "ragnarok-builds": [
+          "ragnarok-builds"
+        ]
+      }
+    }
+  }
+}
