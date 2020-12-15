@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthStateService } from './auth/auth-state.service';
 import { AuthService } from './auth/auth.service';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -21,7 +22,11 @@ import { AuthService } from './auth/auth.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFirestoreModule,
-    AngularFireAuthGuardModule
+    AngularFireAuthGuardModule,
+
+    // Angular Material
+    MatMenuModule,
+    MatIconModule
   ],
   exports: [
     HeaderComponent

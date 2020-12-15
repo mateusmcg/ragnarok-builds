@@ -1,5 +1,5 @@
 section {
-  height: 4.5rem;
+  height: 6.5rem;
   background-color: black;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
@@ -16,8 +16,6 @@ section {
   div.profile {
     cursor: pointer;
     img.profile-img {
-      width: 4rem;
-      height: 4rem;
       border-radius: 50%;
     }
   }

@@ -3,7 +3,13 @@
     <img />
   </div>
   <div class="profile">
-    <img class="profile-img" [src]="user?.photoURL"/>
+    <img [matMenuTriggerFor]="menu" class="profile-img" [src]="user?.photoURL"/>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Sign out
+      </button>
+    </mat-menu>
   </div>
 </section>
 
