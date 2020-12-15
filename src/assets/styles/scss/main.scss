@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #ececec;
+  font-size: 14px;
+  transition: all .3s ease-in-out;
+  font-family: 'Open Sans';
+}
+
+* {
+  box-sizing: border-box;
+}
