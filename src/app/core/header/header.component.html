@@ -1,3 +1,12 @@
-<section>
-
+<section *ngIf="user; else not_logged_in">
+  <div class="menus">
+    <img />
+  </div>
+  <div class="profile">
+    <img class="profile-img" [src]="user?.photoURL"/>
+  </div>
 </section>
+
+<ng-template #not_logged_in>
+  <section></section>
+</ng-template>

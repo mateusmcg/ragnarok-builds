@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthStateService } from '../auth/auth-state.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public user: firebase.default.User;
 
-  ngOnInit(): void {
+  constructor(private authState: AuthStateService) { }
+
+  public ngOnInit(): void {
+    this.authState.getUser().subscribe((user: firebase.default.User | null) => {
+      this.user = user;
+    });
   }
 
 }

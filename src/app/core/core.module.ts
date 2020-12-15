@@ -6,6 +6,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { HeaderComponent } from './header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthStateService } from './auth/auth-state.service';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -23,6 +25,10 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   exports: [
     HeaderComponent
+  ],
+  providers: [
+    AuthStateService,
+    AuthService
   ]
 })
 export class CoreModule { }

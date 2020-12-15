@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
+import { AuthStateService } from './core/auth/auth-state.service';
 
 @Component({
   selector: 'app-root',
@@ -14,19 +13,9 @@ export class AppComponent {
 
   items: Observable<any[]>;
 
-  constructor(firestore: AngularFirestore, public auth: AngularFireAuth) {
+  constructor(firestore: AngularFirestore, private authState: AuthStateService) {
     this.items = firestore.collection('teste').valueChanges();
-
-    this.auth.user.subscribe((user : firebase.default.User | null) => {
-      console.log(user);
-    });
   }
 
-  login() {
-    this.auth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider());
-  }
 
-  logout() {
-    this.auth.signOut();
-  }
 }
